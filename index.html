@@ -14,17 +14,16 @@
         <h1> Snow depth in Tromsø </h1> 
         <script> 
                 
-            for(i = 2000; i <= 2016; i++){
+            for(i = 1990; i <= 2016; i++){
                 var year = i
                 CreateSnowPlot(year);       
            }
-
 
             function CreateSnowPlot(year) { 
                 var width = 200;
                 var height = 100;
                 var y = d3.scaleLinear()
-                    .domain([-1,200])
+                    .domain([-1,250])
                     .range([height,0]);
                  var x = d3.scaleTime()
                     .domain([new Date(year, 1, 1), new Date(year, 12, 30)])
@@ -43,7 +42,7 @@
                   svg.selectAll("g")
                       .data(data)
                       .enter().append("circle") 
-                      .attr("r", 1)
+                      .attr("r", 0.5)
                       .attr("cx", function(d){
                           dat = new Date(d.Date)
                           return x(dat)
