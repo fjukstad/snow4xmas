@@ -5,16 +5,29 @@
     body { 
         font-family: "Helvetica Neue";
     }
-    h1 {
+    h1,p {
         text-align: center;
+    }
+    svg {
+        margin-right: 1em;
+    }
+    p { 
+        margin-top: 2em;
+    }
+    a {
+        text-decoration: none;
+        color: grey;
     }
     </style> 
     </head>
     <body>
         <h1> Snow depth in Tromsø </h1> 
+        <div id="vis"></div>
+        <p> Data from the <a href="http://met.no">Norwegian Meteorological
+                Institute</a></p> 
         <script> 
                 
-            for(i = 1990; i <= 2016; i++){
+            for(i = 1996; i <= 2015; i++){
                 var year = i
                 CreateSnowPlot(year);       
            }
@@ -25,13 +38,14 @@
                 var y = d3.scaleLinear()
                     .domain([-1,250])
                     .range([height,0]);
+                
                  var x = d3.scaleTime()
-                    .domain([new Date(year, 1, 1), new Date(year, 12, 30)])
+                    .domain([new Date(year, 0, 0), new Date(year+1, 0, 0)])
                     .range([0, width]);
 
                 var url = "/snow?year="+year
 
-                var svg = d3.select("body").append("svg")
+                var svg = d3.select("#vis").append("svg")
                     .attr("width", width)
                     .attr("height", height)
                     .attr("id", "snow-"+year)
@@ -61,6 +75,17 @@
                     .attr("text-anchor", "middle")
                     .text(year)
 
+                    console.log(new Date(year, 11, 24))
+                    console.log(x(new Date(year, 11, 24)))
+               
+                svg.append('line')
+                 .attr("x1", x(new Date(year, 11, 24)))
+                 .attr("x2", x(new Date(year, 11, 24)))
+                 .attr("y1", y(0))
+                 .attr("y2", y(100))
+                 .attr("stroke-width", 1)
+                 .attr("stroke", "red");
+                
             }
         </script> 
     </body>
