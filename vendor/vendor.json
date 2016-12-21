@@ -7,7 +7,13 @@
 			"path": "github.com/fjukstad/met",
 			"revision": "3f77df02ea07380b7b06107dfbe96f18ed2eacc4",
 			"revisionTime": "2016-12-21T00:24:52Z"
+		},
+		{
+			"checksumSHA1": "jsYF/pxSdBIxjsOAnPjQ5gmhZCY=",
+			"path": "github.com/fjukstad/snow4xmas",
+			"revision": "6228600ea9c294318c422e0b63344ef5c5731033",
+			"revisionTime": "2016-12-21T12:49:54Z"
 		}
 	],
-	"rootPath": "github.com/fjukstad/met-vis"
+	"rootPath": "github.com/fjukstad/snow4xmas"
 }
