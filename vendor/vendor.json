@@ -1,0 +1,13 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "qET2Zf7YCQLxx0LXCd4ZBnMp0J4=",
+			"path": "github.com/fjukstad/met",
+			"revision": "3f77df02ea07380b7b06107dfbe96f18ed2eacc4",
+			"revisionTime": "2016-12-21T00:24:52Z"
+		}
+	],
+	"rootPath": "github.com/fjukstad/met-vis"
+}
